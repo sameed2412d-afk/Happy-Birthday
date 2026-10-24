@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday, Roooh 💗</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff6fa;--card:#ffffff;--pink:#ff6fa5;--pink2:#ffb3d0;--soft:#ffe0ee;--ink:#5a2a41;--muted:#8a5a73;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2a1620;--card:#3a1f2c;--soft:#4d2a3b;--ink:#ffe8f1;--muted:#f2bcd2;color-scheme:dark}}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Quicksand',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+h1,h2,.script{font-family:'Pacifico',cursive;font-weight:400;color:var(--pink)}
+section{max-width:960px;margin:0 auto;padding:72px 22px}
+h2{font-size:clamp(28px,5vw,42px);text-align:center;margin:0 0 8px}
+.sub{text-align:center;color:var(--muted);margin:0 0 36px}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;background:radial-gradient(circle at 50% 30%,var(--soft),var(--bg) 70%)}
+.hero h1{font-size:clamp(40px,10vw,84px);margin:8px 0;line-height:1.15;text-shadow:3px 3px 0 var(--soft)}
+.hero p{max-width:520px;color:var(--muted);font-size:18px}
+.btn{border:0;cursor:pointer;font:700 16px 'Quicksand',sans-serif;color:#fff;background:linear-gradient(135deg,var(--pink),#ff8fb8);padding:14px 28px;border-radius:999px;box-shadow:0 8px 20px #ff6fa555;transition:.25s;margin:8px}
+.btn:hover{transform:translateY(-4px) scale(1.06);box-shadow:0 14px 28px #ff6fa577}
+.btn.alt{background:var(--card);color:var(--pink);border:2px solid var(--pink2)}
+.float{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.float span{position:absolute;bottom:-40px;animation:up linear infinite;opacity:.7}
+@keyframes up{to{transform:translateY(-115vh) rotate(40deg);opacity:0}}
+main,.hero{position:relative;z-index:1}
+.cake{width:150px;animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-12px) rotate(3deg)}}
+.card{background:var(--card);border-radius:26px;padding:28px;box-shadow:0 10px 30px #ff6fa522;border:2px solid var(--soft);transition:.3s}
+.card:hover{transform:translateY(-8px) rotate(-.6deg);box-shadow:0 18px 40px #ff6fa544;border-color:var(--pink2)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.card .ic{font-size:38px;display:block;transition:.3s}
+.card:hover .ic{transform:scale(1.3) rotate(12deg)}
+.card h3{margin:6px 0;color:var(--pink);font-size:20px}
+.card p{margin:0;color:var(--muted)}
+.big{font-size:19px;text-align:center;max-width:680px;margin:0 auto 18px}
+.tl{max-width:640px;margin:0 auto;border-left:4px dashed var(--pink2);padding-left:26px}
+.tl .card{margin-bottom:22px;position:relative}
+.tl .card::before{content:"💗";position:absolute;left:-46px;top:22px;background:var(--bg);border-radius:50%}
+.tl b{color:var(--pink)}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:18px}
+.gal .d{background:var(--card);border:2px dashed var(--pink2);border-radius:22px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;overflow:hidden;transition:.3s;cursor:pointer}
+.gal .d:hover{transform:scale(1.08) rotate(-3deg);border-style:solid;box-shadow:0 12px 28px #ff6fa544}
+.gal svg,.gal img{width:100%;height:100%;object-fit:cover}
+.up{text-align:center;margin-top:24px}
+.letter{background:var(--card);border-radius:30px;padding:36px 28px;max-width:680px;margin:0 auto;text-align:center;border:2px solid var(--soft);box-shadow:0 14px 40px #ff6fa533}
+.letter p{font-size:18px}
+.heart{display:inline-block;animation:beat 1.2s infinite;cursor:pointer}
+@keyframes beat{40%{transform:scale(1.35)}}
+footer{text-align:center;padding:40px 20px 60px;color:var(--muted);position:relative;z-index:1}
+.music{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top,0px));z-index:10;padding:10px 16px;font-size:14px}
+.reveal{opacity:0;transform:translateY(30px);transition:.8s}
+.reveal.on{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<div class="float" id="float"></div>
+<button class="btn music" id="music">🎵 Play music</button>
+
+<div class="hero">
+  <svg class="cake" viewBox="0 0 120 120" fill="none" stroke="#ff6fa5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 65h80v38H20z" fill="#fff"/><path d="M20 82c10 8 15-8 25 0s15-8 25 0 15-8 30 0" /><path d="M30 65V50h60v15" fill="#ffe0ee"/><path d="M45 50V36M60 50V32M75 50V36"/><path d="M45 30c-3-4 3-6 0-10 5 2 6 7 0 10zM60 26c-3-4 3-6 0-10 5 2 6 7 0 10zM75 30c-3-4 3-6 0-10 5 2 6 7 0 10z" fill="#ffb3d0"/></svg>
+  <h1>Happy Birthday,<br>Roooh!</h1>
+  <p>The Moment i found a beautiful soul. ✨</p>
+  <div><button class="btn" onclick="confetti();document.getElementById('story').scrollIntoView()">Open your surprise 🎁</button></div>
+</div>
+
+<main>
+<section id="story" class="reveal">
+  <h2>You are my Roooh</h2>
+  <p class="sub">I am a hollow body with nothingness what completes me is "Roohh" YOU!</p>
+  <p class="big">Some people come into your life and quietly become the reason everything feels lighter. That’s you. You’re my best friend, my person, and the calm in my loudest days.</p>
+  <p class="big">You never say it with big words, and I’ve learned that you don’t need to. You say it when you ask if I’ve eaten, how my day went, and when you stay on the phone with me through the night until sunrise.</p>
+</section>
+
+<section class="reveal">
+  <h2>The day I met you</h2>
+  <p class="sub">The best plot twist of my first semester</p>
+  <div class="tl">
+    <div class="card"><b>The day we met</b><br>I walked into university not knowing that one hello and inviting you to the community would turn into the best friendship of my life. "April 22, 2026"</div>
+    <div class="card"><b>Best friends</b><br>Five months of laughs, notes, study sessions and sharing everything with each other. You became my favorite person long before I admitted it.</div>
+    <div class="card"><b>September 13</b><br>The night we finally said it out loud. The night my best friend became my forever.</div>
+    <div class="card"><b>Results day</b><br>You scored a 3.79 GPA and told me you were proud of my 3.4 GPA. Nothing made me prouder than being proud of you, too.</div>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2>About your looks</h2>
+  <p class="sub">Yes, I noticed. I notice everything.</p>
+  <div class="grid">
+    <div class="card"><span class="ic">👀</span><h3>Your eyes</h3><p>I get lost in them every time, and I never want to be found. Nainaa. teri ankhon may dekhon tw khoo jaon kahin wapis na any ki rahy meri koshish reh jae pass bas tuu yohin bhula don sara zamana yohin</p></div>
+    <div class="card"><span class="ic">😊</span><h3>Your smile</h3><p>It’s the brightest thing in any room, and it fixes my worst days instantly. Tere gaaloon kay bany woo khadee dekh mera dil khush saa hwjwae hasty muskuraty rahy hamesha tuu bass meri ek yehi iltejaa h. naa aye kabhi ghum tere pass.Tere hissy ka ghumm mujhe miljae meri sari khushi tu lay jae.</p></div>
+    <div class="card"><span class="ic">🎀</span><h3>Your cuteness</h3><p>The way you laugh, scrunch up, and get shy. Pure cuteness, no filter needed. Terii addaon ka kiya hee kehna, mujhe dekh kr apni zulf sawarna ankhen michana hass kay dikhana esiii cheezon kay peechy pagal h tera yay deewana</p></div>
+    <div class="card"><span class="ic">🌸</span><h3>Your glow</h3><p>You’re beautiful outside, but the glow of your soul is what I fell for. Mana honn may thora Kam-zarf liken tere liyen karon sabr sari zingadii, 4 saal ka safar saha na jaee mujshe tere piyaar bina raha na jae mujhse. kehdy jw tu hass kay piyaar say mujhe "Meri jaan" bawraa saa rahon khud ma hee khoo jaon khud say </p></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2>All about you</h2>
+  <p class="sub">The things that make you, you</p>
+  <div class="grid">
+    <div class="card"><span class="ic">🧠</span><h3>Brilliant</h3><p>Smart, hardworking and always quietly crushing it.</p></div>
+    <div class="card"><span class="ic">🤍</span><h3>Pure-hearted</h3><p>Honest, loyal and kind. The softest heart I know.</p></div>
+    <div class="card"><span class="ic">🌙</span><h3>My night owl</h3><p>Our late-night talks and creating fake scenarios are my favorite part of every day.</p></div>
+    <div class="card"><span class="ic">🏡</span><h3>My future</h3><p>With you, “someday” always feels like home.</p></div>
+  </div>
+</section>
+
+<section class="reveal spiral-section" id="memories">
+  <h2>The Beautiful One!</h2>
+  <p class="sub">Some Click of supercalifragilisticexpialidocious lady. 📸</p>
+  <div class="spiral-wrap">
+    <div class="spiral-path" aria-hidden="true"></div>
+    <div class="spiral-stage" id="gal" aria-label="Spiral photo gallery"></div>
+  </div>
+  <style>
+    .spiral-section{max-width:1100px}
+    .spiral-wrap{position:relative;height:620px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .spiral-path{position:absolute;width:570px;height:570px;border:3px dashed var(--pink2);border-radius:50%;transform:scale(.5,.5) rotate(-15deg);box-shadow:0 0 0 62px transparent,0 0 0 65px var(--soft),0 0 0 125px transparent,0 0 0 128px var(--soft);opacity:.65;animation:spiralPulse 5s ease-in-out infinite}
+    @keyframes spiralPulse{50%{transform:scale(.54,.54) rotate(-10deg);opacity:.9}}
+    .spiral-stage{position:relative;width:520px;height:520px;animation:spiralTurn 32s linear infinite}
+    .spiral-stage:hover{animation-play-state:paused}
+    @keyframes spiralTurn{to{transform:rotate(360deg)}}
+    .spiral-stage .d{position:absolute;width:92px;height:92px;aspect-ratio:1;border:3px solid var(--pink2);border-radius:22px;background:var(--card);box-shadow:0 8px 22px #ff6fa544;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;transition:.35s;left:50%;top:50%;transform-origin:center}
+    .spiral-stage .d:hover{z-index:5;border-style:solid;box-shadow:0 14px 30px #ff6fa566}
+    .spiral-stage .d img{width:100%;height:100%;object-fit:cover}
+    .spiral-stage .d.photo{animation:counterSpin 32s linear infinite}
+    @keyframes counterSpin{to{transform:rotate(-360deg)}}
+    @media (max-width:620px){.spiral-wrap{height:470px}.spiral-stage{width:400px;height:400px;transform:scale(.82)}.spiral-path{width:390px;height:390px}.spiral-stage .d{width:72px;height:72px}}
+  </style>
+  <script>
+    const spiral = document.getElementById('gal');
+    const myPictures = [
+      'photos/1.jpeg','photos/2.jpeg','photos/3.jpeg','photos/4.jpeg','photos/5.jpeg',
+      'photos/6.jpeg','photos/7.jpeg','photos/8.jpeg','photos/9.jpeg','photos/10.jpeg',
+      'photos/11.jpeg','photos/12.jpeg','photos/13.jpeg'
+    ];
+    function placeSpiral() {
+      const items = [...spiral.querySelectorAll('.d')];
+      const radius = items.length > 1 ? 44 : 0;
+      items.forEach((item, i) => {
+        const angle = (i / Math.max(items.length, 1)) * Math.PI * 4 - Math.PI / 2;
+        const distance = radius * (0.14 + 0.86 * i / Math.max(items.length - 1, 1));
+        item.style.left = `calc(50% + ${Math.cos(angle) * distance}% - 46px)`;
+        item.style.top = `calc(50% + ${Math.sin(angle) * distance}% - 46px)`;
+        item.style.animationDelay = `${-i * 0.35}s`;
+      });
+    }
+    function addPhoto(src) {
+      const tile = document.createElement('div');
+      tile.className = 'd photo';
+      const image = new Image();
+      image.src = src;
+      image.alt = 'Memory';
+      tile.appendChild(image);
+      spiral.appendChild(tile);
+    }
+    myPictures.forEach(addPhoto);
+    placeSpiral();
+  </script>
+</section>
+
+
+<section class="reveal">
+  <div class="letter">
+    <h2>My birthday wish</h2>
+    <p>Roooh, Thanks for listening to my endless yapping, being there for me. you are the light in my life. your smile makes everything better. I wish you the best which iss mee ofcourse qq kayyy "BANAAAAA PAYAAAA" hahahah</p>
+    <p>I’m not going anywhere. You’re my best friend, my love and my soul, today and always. and I am going to love you for my entire life and usky bhii badd no matter what.</p>
+    <p class="script" style="font-size:28px">I love you ♾️</p>
+    <span class="heart" id="hrt" style="font-size:54px">💗</span><br>
+    <button class="btn" onclick="confetti()">Make a wish 🎉</button>
+  </div>
+</section>
+</main>
+<footer>Made with love by Sami, only for Rumman 💗</footer>
+
+<script>
+const fl=document.getElementById('float'),em=['💗','🌸','✨','🎀','🤍','💖'];
+for(let i=0;i<22;i++){const s=document.createElement('span');s.textContent=em[i%em.length];s.style.left=Math.random()*100+'%';s.style.fontSize=14+Math.random()*22+'px';s.style.animationDuration=9+Math.random()*10+'s';s.style.animationDelay=-Math.random()*14+'s';fl.appendChild(s)}
+const io=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('on')),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+function confetti(){for(let i=0;i<60;i++){const c=document.createElement('div');c.textContent=em[i%em.length];c.style.cssText='position:fixed;z-index:20;pointer-events:none;font-size:'+(16+Math.random()*20)+'px;left:50%;top:50%;transition:all 1.6s cubic-bezier(.2,.8,.3,1);opacity:1';document.body.appendChild(c);requestAnimationFrame(()=>{c.style.transform='translate('+((Math.random()-.5)*window.innerWidth)+'px,'+((Math.random()-.5)*window.innerHeight)+'px) rotate('+Math.random()*720+'deg)';c.style.opacity='0'});setTimeout(()=>c.remove(),1700)}}
+document.getElementById('hrt').onclick=confetti;
+
+// Doodles (inline SVG, hand-drawn style)
+const st='fill="none" stroke="#ff6fa5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"';
+const doodles=[
+`<path d="M50 80C10 50 20 20 50 38c30-18 40 12 0 42z" fill="#ffe0ee"/>`,
+`<circle cx="50" cy="50" r="10" fill="#ffd1e3"/><path d="M50 40c-8-18 16-18 0 0M60 50c18-8 18 16 0 0M50 60c8 18-16 18 0 0M40 50c-18 8-18-16 0 0M50 60v28"/>`,
+`<path d="M25 70V35l15 12 10-15 10 15 15-12v35c0 12-50 12-50 0z" fill="#fff"/><circle cx="41" cy="60" r="2"/><circle cx="59" cy="60" r="2"/><path d="M46 68q4 4 8 0"/>`,
+`<path d="M50 15l10 24 26 2-20 17 7 26-23-14-23 14 7-26-20-17 26-2z" fill="#fff0f6"/>`,
+`<path d="M65 20a30 30 0 1 0 15 50A26 26 0 0 1 65 20z" fill="#ffe0ee"/><path d="M30 25l3 6 6 1-5 4 2 6-6-3-6 3 2-6-5-4 6-1z"/>`,
+`<path d="M22 70h56v16H22zM30 70V50h40v20M40 50V38M50 50V34M60 50V38"/><path d="M50 30c-3-4 2-5 0-9 4 2 5 6 0 9z" fill="#ffb3d0"/>`,
+`<path d="M20 60a15 15 0 0 1 8-26 20 20 0 0 1 38-2 16 16 0 0 1 14 28z" fill="#fff"/><path d="M35 72l-4 10M50 72l-4 10M65 72l-4 10"/>`,
+`<path d="M20 55l60-30-20 55-12-20z" fill="#fff0f6"/><path d="M48 60l32-35"/>`
+];
+const gal=document.getElementById('gal');
+doodles.forEach(d=>{const x=document.createElement('div');x.className='d';x.innerHTML='<svg viewBox="0 0 100 100" '+st+'>'+d+'</svg>';gal.appendChild(x)});
+const fileInput=document.getElementById('file');
+if(fileInput){fileInput.onchange=e=>[...e.target.files].forEach(f=>{const r=new FileReader();r.onload=()=>{const x=document.createElement('div');x.className='d';const im=new Image();im.src=r.result;x.appendChild(im);gal.prepend(x);confetti()};r.readAsDataURL(f)})}
+
+// Happy Birthday tune (Web Audio, no files needed)
+let ctx,playing=false,timer,gain;
+const N={G4:392,A4:440,B4:494,C5:523,D5:587,E5:659,F5:698,G5:784};
+const song=[['G4',.75],['G4',.25],['A4',1],['G4',1],['C5',1],['B4',2],['G4',.75],['G4',.25],['A4',1],['G4',1],['D5',1],['C5',2],['G4',.75],['G4',.25],['G5',1],['E5',1],['C5',1],['B4',1],['A4',2],['F5',.75],['F5',.25],['E5',1],['C5',1],['D5',1],['C5',2]];
+function playTune(){const beat=.5;let t=ctx.currentTime+.05;song.forEach(([n,d])=>{const o=ctx.createOscillator(),g=ctx.createGain();o.type='triangle';o.frequency.value=N[n];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.25,t+.03);g.gain.exponentialRampToValueAtTime(.001,t+d*beat);o.connect(g);g.connect(gain);o.start(t);o.stop(t+d*beat+.05);t+=d*beat});return(t-ctx.currentTime)*1000}
+function start(){if(playing)return;try{ctx=ctx||new (window.AudioContext||window.webkitAudioContext)();gain=ctx.createGain();gain.connect(ctx.destination);playing=true;const loop=()=>{if(!playing)return;timer=setTimeout(loop,playTune()+1200)};loop();btn.textContent='⏸ Pause music'}catch(e){}}
+function stop(){playing=false;clearTimeout(timer);try{gain.disconnect()}catch(e){};btn.textContent='🎵 Play music'}
+const btn=document.getElementById('music');btn.onclick=e=>{e.stopPropagation();playing?stop():start()};
+addEventListener('click',()=>{if(!playing&&!window.__tried){window.__tried=1;start()}},{once:true});
+</script>
+</body>
+</html>
